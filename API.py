@@ -10,4 +10,6 @@ while True:
         response.raise_for_status()
     except requests.exceptions.ReadTimeout:
         continue
+    except requests.exceptions.ConnectionError:
+        continue
     print(response.json())
